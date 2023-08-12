@@ -29,10 +29,11 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none">Roshan Pandey</span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/me.jpg" alt="">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/Roshan.jpg" alt="">
       </span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -69,22 +70,23 @@
         <h1 class="mb-0">Roshan
           <span class="text-primary">Pandey</span>
         </h1>
-        <div class="subheading mb-5">Software Engineer | 
-          <a href="">Coditas</a>
+        <div class="subheading mb-5">Software Engineer |
+          <a href="https://coditas.com/" target="_blank">Coditas</a>
         </div>
-        <p class="lead mb-5">Persuing B.Tech. in CSE from JUET Guna. Interested in building my career in IT Industry as a programmer. I have medium level proficiency in Django and Beginner level experience in React JS. Mostly I work in Python and Data Structures using C++.</p>
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/pandeyroshanjuet/">
+        <p class="lead mb-5">Seeking a challenging software engineering position where I can leverage my experience to
+          take initiative, think critically, and provide
+          innovative solutions. I am highly motivated to work in a dynamic environment that encourages continuous
+          learning and growth, enabling me to
+          contribute effectively to the success of the organization.</p>
+        <div class="social-icons" style="text-align: center;">
+          <a href="https://www.linkedin.com/in/the-developer-guy/" target="_blank">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://github.com/pandeyroshan">
+          <a href="https://github.com/pandeyroshan" target="_blank">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://medium.com/@pandeyroshan556">
+          <a href="https://medium.com/@pandeyroshan556" target="_blank">
             <i class="fab fa-medium"></i>
-          </a>
-          <a href="https://www.facebook.com/roshan172">
-            <i class="fab fa-facebook-f"></i>
           </a>
         </div>
       </div>
@@ -98,12 +100,119 @@
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
-            <h3 class="mb-0">Freelancer</h3>
-            <div class="subheading mb-3">Mindrise Solutions</div>
-            <p>Working here for the development of CRM for a client on the behalf of Mindrise Solution as an freelancer. developed the database schema for managing the employee details and their attandance under various projects. Admin has the ability to generate salary slip for employees. The sysyem has a ticketing system via which admin can report bugs and issues to the developer and keep tracking with their ticket ID. Integrated frontend with backend APIs. Hosted the entire application using Miles-web hosting plateform.</p>
+            <h3 class="mb-0">Sofware Engineer</h3>
+            <div class="subheading mb-3">Coditas</div>
+            <p>Technology - NodeJS, Typescript, Serverless, AWS Lambda, AWS S3, AWS Cloudwatch, Apache Atlas, Keycloak.
+            </p>
+            <hr>
+            <p>
+              1. Datalake API default models
+            <p><b>Overview: </b>This project was about the modernization of the existing microservice to event-driven
+              serverless API
+              which is scalable and capable of handling large data. The project was fairly complex with multiple moving
+              components like AWS SQS, AWS S3, PostgreSQL etc.</p>
+            <p>Workflow -</p>
+            <li>
+              Taking the request from the user, creating a job and breaking the job into smaller batches.
+            </li>
+            <li>
+              Pushing those batches into AWS SQS, and then triggering the Analysis lambda through the SQS.
+            </li>
+            <li>
+              After having the result for individual batches storing the result in AWS S3 and then aggregating all the
+              result.
+            </li>
+            <li>
+              Once all the batches are done then creating a consolidated output and generating a presigned URL of AWS S3
+              object which user can access.
+            </li>
+            </p>
+            <p><b>Technology used: </b> NodeJS, Serverless, PostgreSQL, AWS S3, AWS SQS, AWS API Gateway</p>
+            <hr>
+            <p>
+              2. Slack Adapter
+            <p><b>Overview: </b>The Slack Adapter is designed to automate API calls through Slack commands, making it
+              more user-friendly for non-technical users to perform actions that typically require running several
+              Postman scripts.</p>
+
+            <p>Workflow</p>
+            <li>Access Setup: Certain users are granted access to a specific Slack channel where they can use the
+              Slack
+              command for automation.
+            </li>
+            <li>
+              User Request: When a user sends a command through the Slack channel (e.g.,
+              <b>/add_user_to_dashboard
+                pandeyroshan556@gmail.com ACM_Dashboard</b>), the adapter processes the request.
+            </li>
+            <li>
+              Immediate Acknowledgment: The adapter immediately acknowledges the receipt of the task in the Slack
+              channel, assuring the user that their request is being handled.
+            </li>
+            <li>
+              Execution: The adapter triggers a worker function to initiate the execution of the required action.
+              In
+              this case, it involves making specific API calls.
+            </li>
+            <li>
+              API Calls: The worker function executes the necessary API calls, performing the desired action. For
+              example, if the command is to add a user to a dashboard, the relevant APIs are called to complete the
+              task.
+            </li>
+            <br>
+            <p><b>Technology used</b>: NodeJS, Serverless, Typescript, Github Action (for CI/CD)</p>
+            </p>
+
+            <hr>
+
+            <p>
+              3. Data Catalog - Apache Atlas
+            <p><b>Overview: </b> Stabalized the setup for Apache atlas with the keycloak authentication. Apache atlas
+              serves the purpose of a data dictionary for different data models. The setup required to import the
+              datasets from hive whenever there is any new dataset introduced. I introduced an enhanced approach for
+              streamlining the dataset importing process within Apache Atlas.</p>
+            The Original Three-Step Process:<br><br>
+
+            <li>Switching Authentication: Transitioning the authentication system from keycloak-based login to
+              file-based
+              login.</li>
+
+            <li>Running Import: Executing the import_hive.sh script located in /apache/atlas/bin to import or reimport
+              datasets.</li>
+
+            <li>Changing Authentication Back: Reverting the authentication system to keycloak-based login after
+              completing
+              the import.</li>
+
+            While effective, this process demanded manual intervention and several steps, which we believed could be
+            simplified for better efficiency.
+
+            <br><br>
+            <p>Enhancement done -</p>
+            To improve and simplify the process, we have implemented two aliases that map to shell scripts, providing a
+            streamlined experience:
+            <br><br>
+            <li><b>auth_switch</b> - Executing the auth_switch command simplifies the transition between authentication
+              systems
+              within Atlas. By running this command, users are prompted to choose from the available authentication
+              options:
+
+              1) File based authentication
+
+              2) Keycloak based authentication, Upon selecting their preferred option, the atlas-application.properties
+              file located in /apache/atlas/conf is automatically updated with the relevant settings for the chosen
+              authentication method. Additionally, the Atlas server restarts seamlessly to ensure a smooth transition.
+            </li>
+            <li>
+              <b>import</b> - This command basically when ran, asks for user input like the database name and the
+              tablename and
+              does the import accordingly.
+            </li>
+            </p>
+            <p>Technology used: AWS EMR, Apache Atlas, Keycloak, Shell scripting, Linux</p>
           </div>
           <div class="resume-date text-md-right">
-            <span class="text-primary">Feb 2020 - Present</span>
+            <span class="text-primary">Apr 2022 - Present (~ 1.5 years)</span>
           </div>
         </div>
 
@@ -111,7 +220,9 @@
           <div class="resume-content">
             <h3 class="mb-0">Backend Intern</h3>
             <div class="subheading mb-3">Unbox Innovations</div>
-            <p>Developed an E-Commerce application which uses intermediary distribution approach which makes it less prone to cyber attacks. Built backend APIs from very scratch and integrated with the frontend. Integrating 3rd party gateways for payment processing, e-mails, and SMS.</p>
+            <p>Developed an E-Commerce application which uses intermediary distribution approach which makes it less
+              prone to cyber attacks. Built backend APIs from very scratch and integrated with the frontend. Integrating
+              3rd party gateways for payment processing, e-mails, and SMS.</p>
           </div>
           <div class="resume-date text-md-right">
             <span class="text-primary">Dec 2019 - Jan 2020</span>
@@ -164,35 +275,44 @@
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            Python | Django Framework | Django ORM | REST API Development</li>
+            Python | Django Framework | Django ORM | REST API Development
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            C++ | Data Structures and Algorithms in C++</li>
+            C++ | Data Structures and Algorithms in C++
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            HTML | CSS | JS ( Beginner ) | React ( Beginner )</li>
+            HTML | CSS | JS ( Beginner ) | React ( Beginner )
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Linux ( Ubuntu Distribution ) &amp; Git ( distributed version control system ) and Github</li>
+            Linux ( Ubuntu Distribution ) &amp; Git ( distributed version control system ) and Github
+          </li>
         </ul>
         <br>
         <div class="subheading mb-3">Area of Interest/Proficiency</div>
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            Object Oriented Programming</li>
+            Object Oriented Programming
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Database management system</li>
+            Database management system
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Computer networks</li>
+            Computer networks
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Operation System</li>
+            Operation System
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Data Structures and Algorithms</li>
+            Data Structures and Algorithms
+          </li>
         </ul>
       </div>
     </section>
@@ -207,31 +327,43 @@
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            </li>
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Netcoin - Doing this project as my major project for the B.Tech. course, Netcoin is a Blockchain Based Cryptocurrency for the Simulation of real Cryptocurrency Transaction.</li>
+            Netcoin - Doing this project as my major project for the B.Tech. course, Netcoin is a Blockchain Based
+            Cryptocurrency for the Simulation of real Cryptocurrency Transaction.
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            HashMail - Prototype build on the top of Django, to practice the concept and flow of encrypted mail transfer.</li>
+            HashMail - Prototype build on the top of Django, to practice the concept and flow of encrypted mail
+            transfer.
+          </li>
         </ul>
         <br>
         <div class="subheading mb-3">Completed Projects</div>
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            Elite CRM - Did this project as a freelancer for Elite works, a CRM Application for managing multiple projects and client.</li>
+            Elite CRM - Did this project as a freelancer for Elite works, a CRM Application for managing multiple
+            projects and client.
+          </li>
           <li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            KnowledgeBASE - Personal project for keeping track of Data structure problem solved and Algorithms implemented. </li>
+            KnowledgeBASE - Personal project for keeping track of Data structure problem solved and Algorithms
+            implemented.
+          </li>
           <li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Tech-Talk - Blogging application while learning Django Framework having functionality to follow other users, liking and commenting on other's posts.</li>
+            Tech-Talk - Blogging application while learning Django Framework having functionality to follow other users,
+            liking and commenting on other's posts.
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            GeoLocation Modifier - Provide feature to add a CSV file with address, returns a downloadable file with langitute and lattitude for each address in uploaded CSV file using Google's Geolocation API.</li>
+            GeoLocation Modifier - Provide feature to add a CSV file with address, returns a downloadable file with
+            langitute and lattitude for each address in uploaded CSV file using Google's Geolocation API.
+          </li>
         </ul>
       </div>
     </section>
@@ -244,13 +376,17 @@
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            Kodeathon 18.2 | 2018 - Secured 4th position in University level Kodeathon.</li>
+            Kodeathon 18.2 | 2018 - Secured 4th position in University level Kodeathon.
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            LOA | 2019 - Recieved Letter of appreciation from ISF club for being part of the club in the University.</li>
+            LOA | 2019 - Recieved Letter of appreciation from ISF club for being part of the club in the University.
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            UN Information Center, New Delhi | 2013 -  Received an honorable mention in All India Essay writing competition.</li>
+            UN Information Center, New Delhi | 2013 - Received an honorable mention in All India Essay writing
+            competition.
+          </li>
         </ul>
 
         <br>
@@ -259,10 +395,12 @@
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            ISF - Worked as an event manager for Dextra-2018.</li>
+            ISF - Worked as an event manager for Dextra-2018.
+          </li>
           <li>
             <i class="fa-li fa fa-trophy text-warning"></i>
-            Mozilla - Volunteered for a year in the university as freshman (2017).</li>
+            Mozilla - Volunteered for a year in the university as freshman (2017).
+          </li>
         </ul>
       </div>
     </section>
@@ -275,10 +413,12 @@
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            Email : pandeyroshan556@gmail.com</li>
+            Email : pandeyroshan556@gmail.com
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Phone | Whatsapp : +91-9752315423</li>
+            Phone | Whatsapp : +91-9752315423
+          </li>
           <li>
         </ul>
         <br>
@@ -286,16 +426,20 @@
         <ul class="fa-ul mb-0">
           <li>
             <i class="fa-li fa fa-check"></i>
-            Leetcode : <a href="https://leetcode.com/roshan172/">roshan172</a></li>
+            Leetcode : <a href="https://leetcode.com/roshan172/">roshan172</a>
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Geeksforgeeks : <a href="https://auth.geeksforgeeks.org/user/roshan172/practice/">roshan172</a></li>
+            Geeksforgeeks : <a href="https://auth.geeksforgeeks.org/user/roshan172/practice/">roshan172</a>
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Github : <a href="https://github.com/pandeyroshan">pandeyroshan</a></li>
+            Github : <a href="https://github.com/pandeyroshan">pandeyroshan</a>
+          </li>
           <li>
             <i class="fa-li fa fa-check"></i>
-            Medium : <a href="https://medium.com/@pandeyroshan556">pandeyroshan556</a></li>
+            Medium : <a href="https://medium.com/@pandeyroshan556">pandeyroshan556</a>
+          </li>
         </ul>
       </div>
     </section>
